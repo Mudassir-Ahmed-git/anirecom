@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+<div class="card bg-dark text-light mt-5" style="width: 18rem;">
+{% if anime.images.jpg.image_url %}
+  <img src="{{ anime.images.jpg.image_url }}" class="card-img-top" alt="...">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title">{{ anime.title }}</h5>
+    <p class="card-text"> <strong>Episodes :</strong> {{ anime.episodes }}
+ <br/>   <strong>Status : </strong>{{ anime.status }}<br/>
+<strong> Rating : </strong>{{ anime.rating }}
+<br/> <strong> Score : </strong> {{anime.score }}
+  </p>
+    <a href="{{anime.url }}" class="btn btn-light">Learn more...</a>
+    <a href="{{ url_for('index') }}" class="btn btn-light">Home</a>
+  </div>
+</div>
+
+{% endblock %}
