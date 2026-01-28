@@ -11,9 +11,9 @@
   
   <!-- Navbar -->
    <nav class="navbar navbar-custom border-bottom border-body justify-content-center" >
-  <h2 class="text-custom"><a class="logo" href="{{ url_for('index') }}">Anime Recommender
+  <h3 class="text-custom"><a class="logo" href="{{ url_for('index') }}">aniRECOM
 </a>
-</h2>
+</h3>
 </nav>
 
 
@@ -21,11 +21,12 @@
 {% block content %}
  <div class="row mt-5">
  <!-- Search Box -->
-<div class="col-auto bg-dark rounded">
+<div class="col-auto rounded homebox">
  <form method="post" class="d-flex align-items-center flex-column p-3">
- <p class="text-white fs-5 text-center" >Welcome to <strong>Random Anime Recommender</strong></p>
- <p class="text-white fs-5 text-center" >Press button to get random anime</p>
-<button class="button mt-5 mb-2">Recommend Anime</button>
+ <p class="fs-5 text-center homehead" >Welcome to <strong>Random Anime Recommender</strong></p>
+ <p class="fs-6 text-center homepara" ><b>aniRECOM is your instant cure for “I don’t know what to watch.”<br> One click, and we surprise you with a random anime that could become your next favorite.<br>Perfect for bored moments and endless scrolling,<br>aniRECOM turns indecision into discovery.<br>Just click, explore, and start watching.
+</b></p>
+<button class="button mt-3 mb-2">Recommend Anime</button>
 </form>
 </div>
 </div>
