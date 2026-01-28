@@ -1,21 +1,28 @@
 {% extends "index.html" %}
 {% block content %}
 
-
-<div class="card bg-dark text-light mt-5" style="width: 18rem;">
-{% if anime.images.jpg.image_url %}
-  <img src="{{ anime.images.jpg.image_url }}" class="card-img-top" alt="...">
-  {% endif %}
-  <div class="card-body">
-    <h5 class="card-title">{{ anime.title }}</h5>
-    <p class="card-text"> <strong>Episodes :</strong> {{ anime.episodes }}
- <br/>   <strong>Status : </strong>{{ anime.status }}<br/>
-<strong> Rating : </strong>{{ anime.rating }}
-<br/> <strong> Score : </strong> {{anime.score }}
-  </p>
-    <a href="{{anime.url }}" class="btn btn-light">Learn more...</a>
-    <a href="{{ url_for('index') }}" class="btn btn-light">Home</a>
+<div class="card bg-dark text-light mb-3 mt-5" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      {% if anime.images.jpg.image_url %}
+        <img src="{{ anime.images.jpg.image_url }}" class="card-img-top" alt="...">
+      {% endif %}
+    </div>
+    <div class="col-md-8 card-custom">
+      <div class="card-body">
+        <h5 class="card-title">{{ anime.title }}</h5>
+        <p class="card-text"> <strong>Episodes :</strong> {{ anime.episodes }}
+        <br/>   <strong>Status : </strong>{{ anime.status }}<br/>
+        <strong> Rating : </strong>{{ anime.rating }}
+        <br/> <strong> Score : </strong> {{anime.score }}
+        </p>
+          <a href="{{anime.url }}" class="btn btn-light custom-btn">More Details</a>
+        <a href="{{ url_for('index') }}" class="btn btn-light custom-btn">Home</a>
+        <a href="{{ url_for('next') }}" class="btn btn-light custom-btn">New</a>
+      </div>
+    </div>
   </div>
 </div>
+
 
 {% endblock %}
