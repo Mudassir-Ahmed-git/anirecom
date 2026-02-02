@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 .navbar-custom{
     background-color: white;
     opacity: 0.85;
@@ -79,4 +79,28 @@
 
 .button:hover::before {
   width: 160%;
+}
+.footer{
+    width: 100vw;
+    height: 4.5rem;
+    background-color: white;
+    opacity: 0.9;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.social-icons{
+    font-size: 1.2rem;
+    color: purple;
+    padding-right: 0.4rem;
+}
+.socials{
+    padding-top: 1rem;
+}
+.about-dev p{
+    font-weight: 500;
 }
