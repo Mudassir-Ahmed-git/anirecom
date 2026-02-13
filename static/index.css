@@ -99,8 +99,45 @@
     padding-right: 0.4rem;
 }
 .socials{
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+}
+.socials p{
+    margin-bottom: 0;
 }
 .about-dev p{
+    margin-top: 0.7rem;
     font-weight: 500;
+}
+.about-dev p a{
+    color: purple;
+}
+.about{
+    background-color: white;
+    opacity: 0.90;
+    width: 80vw;
+    height: 70vh;
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.about h3{
+    padding-top: 1rem;
+    font-weight: 900;
+}
+.about p{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 500;
+    color: purple;
+    text-align: center;
+}
+.copyright{
+    font-size: 1rem;
+    color: purple;
+    font-weight: 500;
+    margin-top: 1rem;
 }
