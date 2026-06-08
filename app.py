@@ -51,6 +51,9 @@ def next():
 
     return redirect(url_for("show_anime"))
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 #Running App with debug-mode ON
 if __name__ == "__main__":
