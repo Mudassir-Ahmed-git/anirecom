@@ -1,18 +1,26 @@
-from flask import request
-import json, urllib
+import json
+import time
+import urllib.request
+import urllib.error
 
-def get_anime(id):
+def get_anime(id, max_retries=5):
     url = f"https://api.jikan.moe/v4/anime/{id}/full"
-    try:
-        resp = urllib.request.urlopen(url)
+    backoff = 1  # seconds
 
-        while id:
+    for attempt in range(max_retries):
+        try:
             resp = urllib.request.urlopen(url)
-            if resp.status == 200:
-                jsonData = json.loads(resp.read())["data"]
-                return jsonData
+            return json.loads(resp.read())["data"]
 
-    except urllib.error.HTTPError as err:
-        id += 1
-        url = f"https://api.jikan.moe/v4/anime/{id}/full"
-        return get_anime(id)
+        except urllib.error.HTTPError as err:
+            if err.code == 429:
+                retry_after = err.headers.get("Retry-After")
+                wait = float(retry_after) if retry_after else backoff
+                time.sleep(wait)
+                backoff *= 2  # exponential backoff
+                continue
+            else:
+                # not a rate-limit error, don't retry blindly
+                raise
+
+    raise RuntimeError(f"Failed to fetch anime {id} after {max_retries} retries")
