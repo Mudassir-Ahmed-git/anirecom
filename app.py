@@ -5,7 +5,7 @@
 #Required imports
 from flask import Flask, request, url_for, render_template, redirect, session
 import random, urllib, json
-from .utilities import get_anime
+from utilities import get_anime
 from dotenv import load_dotenv
 import os
 
